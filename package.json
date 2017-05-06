@@ -1,0 +1,22 @@
+{
+  "name": "my-dribbble",
+  "version": "1.0.0",
+  "description": "Simple project that uses the Dribbble API to imitate some of the core functionalities of the website.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasbfernandes/my-dribbble.git"
+  },
+  "author": "Lucas Borges Fernandes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasbfernandes/my-dribbble/issues"
+  },
+  "homepage": "https://github.com/lucasbfernandes/my-dribbble#readme",
+  "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-contrib-clean": "1.1.0",
+    "lodash": "4.17.4",
+    "matchdep": "1.0.1",
+    "time-grunt": "1.4.0"
+  }
+}
