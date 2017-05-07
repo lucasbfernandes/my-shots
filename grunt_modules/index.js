@@ -35,6 +35,8 @@ module.exports = {
 		'clean',
 		'copy',
 		'compass',
-		'nunjucks_json'
+		'nunjucks_json',
+		'connect',
+		'watch'
 	])
 };

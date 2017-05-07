@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 		],
 
 		run: [
-			'build'
+			'build', 'connect:preview', 'watch'
 		],
 
 		default: [
