@@ -1,6 +1,6 @@
 'use strict';
 
-var _			= require('lodash'),
+var	_			= require('lodash'),
 	configs		= require('./grunt_modules'),
 	matchdep	= require('matchdep'),
 	timeGrunt	= require('time-grunt');
@@ -39,18 +39,31 @@ module.exports = function(grunt) {
 
 	var tasks = {
 
-		build: [
+		build_script: [
+			'copy:script_preview'
+		],
 
-			'clean:preview'
+		build_style: [
+			'compass:preview'
+		],
+
+		build_template: [
+			'nunjucks_json'
+		],
+
+		build_third_party: [
+			'copy:third_party_preview'
+		],
+
+		build: [
+			'clean:preview', 'build_script', 'build_style', 'build_template', 'build_third_party'
 		],
 
 		run: [
-
 			'build'
 		],
 
 		default: [
-
 			'run'
 		]
 	};

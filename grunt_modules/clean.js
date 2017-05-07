@@ -2,5 +2,5 @@
 
 module.exports = {
 
-	preview		: ['<%= defaults.preview %>']
+	preview: ['<%= defaults.preview %>']
 };

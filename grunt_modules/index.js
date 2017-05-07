@@ -32,7 +32,9 @@ module.exports = {
 	},
 
 	tasks: getTasks([
-
 		'clean',
+		'copy',
+		'compass',
+		'nunjucks_json'
 	])
 };
