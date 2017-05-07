@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		{% block styles %}
+			<link rel="stylesheet" href="../css/main.css">
+		{% endblock %}
+
+		<script>
+			var appSettings = {
+
+			};
+		</script>
+	</head>
+
+	<body>
+		{% block header %}
+			<header>
+				<h1>Base.html</h1>
+			</header>
+		{% endblock %}
+
+		<script async data-main="../js/main.js" src="../third-party/bower-component/requirejs/require.js"></script>
+	</body>
+</html>
