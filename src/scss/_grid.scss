@@ -1,0 +1,320 @@
+/*!
+Pure v0.6.2
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+
+Copyright 2014 Yahoo! Inc. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+    * Neither the name of the Yahoo! Inc. nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL YAHOO! INC. BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/
+
+.grid-g {
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    *letter-spacing: normal; /* reset IE < 8 */
+    *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+
+    /*
+    Sets the font stack to fonts known to work properly with the above letter
+    and word spacings. See: https://github.com/yahoo/pure/issues/41/
+
+    The following font stack makes Pure Grids work on all known environments.
+
+    * FreeSans: Ships with many Linux distros, including Ubuntu
+
+    * Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and
+      Arial to get picked up by the browser, even though neither is available
+      in Chrome OS.
+
+    * Droid Sans: Ships with all versions of Android.
+
+    * Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
+    */
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+
+    /* Use flexbox when possible to avoid `letter-spacing` side-effects. */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+
+    /* Prevents distributing space between rows */
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+}
+
+/* IE10 display: -ms-flexbox (and display: flex in IE 11) does not work inside a table; fall back to block and rely on font hack */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	table .grid-g {
+		display: block;
+	}
+}
+
+/* Opera as of 12 on Windows needs word-spacing.
+   The ".opera-only" selector is used to prevent actual prefocus styling
+   and is not required in markup.
+*/
+.opera-only :-o-prefocus,
+.grid-g {
+    word-spacing: -0.43em;
+}
+
+.grid {
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+/*
+Resets the font family back to the OS/browser's default sans-serif font,
+this the same font stack that Normalize.css sets for the `body`.
+*/
+.grid-g [class *= "grid"] {
+    font-family: sans-serif;
+}
+
+.grid-1,
+.grid-1-1,
+.grid-1-2,
+.grid-1-3,
+.grid-2-3,
+.grid-1-4,
+.grid-3-4,
+.grid-1-5,
+.grid-2-5,
+.grid-3-5,
+.grid-4-5,
+.grid-5-5,
+.grid-1-6,
+.grid-5-6,
+.grid-1-8,
+.grid-3-8,
+.grid-5-8,
+.grid-7-8,
+.grid-1-12,
+.grid-5-12,
+.grid-7-12,
+.grid-11-12,
+.grid-1-24,
+.grid-2-24,
+.grid-3-24,
+.grid-4-24,
+.grid-5-24,
+.grid-6-24,
+.grid-7-24,
+.grid-8-24,
+.grid-9-24,
+.grid-10-24,
+.grid-11-24,
+.grid-12-24,
+.grid-13-24,
+.grid-14-24,
+.grid-15-24,
+.grid-16-24,
+.grid-17-24,
+.grid-18-24,
+.grid-19-24,
+.grid-20-24,
+.grid-21-24,
+.grid-22-24,
+.grid-23-24,
+.grid-24-24 {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+.grid-1-24 {
+    width: 4.1667%;
+    *width: 4.1357%;
+}
+
+.grid-1-12,
+.grid-2-24 {
+    width: 8.3333%;
+    *width: 8.3023%;
+}
+
+.grid-1-8,
+.grid-3-24 {
+    width: 12.5000%;
+    *width: 12.4690%;
+}
+
+.grid-1-6,
+.grid-4-24 {
+    width: 16.6667%;
+    *width: 16.6357%;
+}
+
+.grid-1-5 {
+    width: 20%;
+    *width: 19.9690%;
+}
+
+.grid-5-24 {
+    width: 20.8333%;
+    *width: 20.8023%;
+}
+
+.grid-1-4,
+.grid-6-24 {
+    width: 25%;
+    *width: 24.9690%;
+}
+
+.grid-7-24 {
+    width: 29.1667%;
+    *width: 29.1357%;
+}
+
+.grid-1-3,
+.grid-8-24 {
+    width: 33.3333%;
+    *width: 33.3023%;
+}
+
+.grid-3-8,
+.grid-9-24 {
+    width: 37.5000%;
+    *width: 37.4690%;
+}
+
+.grid-2-5 {
+    width: 40%;
+    *width: 39.9690%;
+}
+
+.grid-5-12,
+.grid-10-24 {
+    width: 41.6667%;
+    *width: 41.6357%;
+}
+
+.grid-11-24 {
+    width: 45.8333%;
+    *width: 45.8023%;
+}
+
+.grid-1-2,
+.grid-12-24 {
+    width: 50%;
+    *width: 49.9690%;
+}
+
+.grid-13-24 {
+    width: 54.1667%;
+    *width: 54.1357%;
+}
+
+.grid-7-12,
+.grid-14-24 {
+    width: 58.3333%;
+    *width: 58.3023%;
+}
+
+.grid-3-5 {
+    width: 60%;
+    *width: 59.9690%;
+}
+
+.grid-5-8,
+.grid-15-24 {
+    width: 62.5000%;
+    *width: 62.4690%;
+}
+
+.grid-2-3,
+.grid-16-24 {
+    width: 66.6667%;
+    *width: 66.6357%;
+}
+
+.grid-17-24 {
+    width: 70.8333%;
+    *width: 70.8023%;
+}
+
+.grid-3-4,
+.grid-18-24 {
+    width: 75%;
+    *width: 74.9690%;
+}
+
+.grid-19-24 {
+    width: 79.1667%;
+    *width: 79.1357%;
+}
+
+.grid-4-5 {
+    width: 80%;
+    *width: 79.9690%;
+}
+
+.grid-5-6,
+.grid-20-24 {
+    width: 83.3333%;
+    *width: 83.3023%;
+}
+
+.grid-7-8,
+.grid-21-24 {
+    width: 87.5000%;
+    *width: 87.4690%;
+}
+
+.grid-11-12,
+.grid-22-24 {
+    width: 91.6667%;
+    *width: 91.6357%;
+}
+
+.grid-23-24 {
+    width: 95.8333%;
+    *width: 95.8023%;
+}
+
+.grid-1,
+.grid-1-1,
+.grid-5-5,
+.grid-24-24 {
+    width: 100%;
+}

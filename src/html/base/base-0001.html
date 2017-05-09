@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		{% block styles %}
+			<link rel="stylesheet" href="../css/main.css">
+		{% endblock %}
+
+		<script>
+			var appSettings = {
+
+				defaultParams: {
+					credentials: {
+						access_token: 'aba489e918f3ce5c1a3d089b327174d8214da7d5d095fc5c29bb5b6ffed0aefb'
+					}
+				},
+
+				serviceUrls: {
+					GET_SHOTS: 'https://api.dribbble.com/v1/shots'
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+		{% block header %}
+			{% include "../component/header/header-0001.html" %}
+		{% endblock %}
+
+		{% block main %}
+			{% include "../component/main/main-0001.html" %}
+		{% endblock %}
+
+		{% block footer %}
+			{% include "../component/footer/footer-0001.html" %}
+		{% endblock %}
+
+		<script async data-main="../js/main.js" src="../third-party/bower-component/requirejs/require.js"></script>
+	</body>
+</html>

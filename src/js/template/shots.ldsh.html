@@ -1,0 +1,11 @@
+<% var shotsLength = shots.length; %>
+
+<% for (var i = 0; i < shotsLength; i++) { %>
+	
+	<% var shot = shots[i]; %>
+
+	<div class="shots-0001__image grid-1">
+		<img src="<%= shot.images.teaser %>" alt="<%= shot.title %>"/>
+	</div>
+
+<% } %>
