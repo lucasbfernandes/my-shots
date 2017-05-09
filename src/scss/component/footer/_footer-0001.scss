@@ -1,4 +1,12 @@
 .footer-0001 {
 	background: $color-white;
 	border-top: 1px solid $color-mercury;
+	box-sizing: border-box;
+	font-size: 0;
+	margin: 0 auto;
+	padding: 30px 30px 20px 30px;
+
+	&__info {
+		font-size: 13px;
+	}
 }

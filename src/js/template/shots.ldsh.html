@@ -1,11 +1,19 @@
 <% var shotsLength = shots.length; %>
 
-<% for (var i = 0; i < shotsLength; i++) { %>
-	
-	<% var shot = shots[i]; %>
+<div class="shots-0001">
 
-	<div class="shots-0001__image grid-1">
-		<img src="<%= shot.images.teaser %>" alt="<%= shot.title %>"/>
-	</div>
+	<% for (var i = 0; i < shotsLength; i++) { %>
+		
+		<% var shot = shots[i]; console.log(shots); %>
 
-<% } %>
+		<div class="shots-0001__image-container">
+			<img class="shots-0001__image" src="<%= shot.images.teaser %>" alt="<%= shot.title %>"/>
+			<div class="shots-0001__user-container">
+				<img class="shots-0001__avatar noselect" src="<%= shot.user.avatar_url %>" alt="User Avatar"/>
+				<span class="shots-0001__username text-0001"><%= shot.user.name %></span>
+			</div>
+		</div>
+
+	<% } %>
+
+</div>
