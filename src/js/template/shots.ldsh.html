@@ -1,16 +1,18 @@
 <% var shotsLength = shots.length; %>
+<% var shotsClass = shotsSize === 'small'? 'shots-0001' : 'shots-0002'; %>
 
-<div class="shots-0001">
+<div class="<%= shotsClass %>">
 
 	<% for (var i = 0; i < shotsLength; i++) { %>
 		
-		<% var shot = shots[i]; console.log(shots); %>
+		<% var shot = shots[i]; console.log(shotsSize); %>
+		<% var image = shotsSize === 'small'? shot.images.teaser : shot.images.normal; %>
 
-		<div class="shots-0001__image-container">
-			<img class="shots-0001__image" src="<%= shot.images.teaser %>" alt="<%= shot.title %>"/>
-			<div class="shots-0001__user-container">
-				<img class="shots-0001__avatar noselect" src="<%= shot.user.avatar_url %>" alt="User Avatar"/>
-				<span class="shots-0001__username text-0001"><%= shot.user.name %></span>
+		<div class="<%= shotsClass %>__image-container">
+			<img class="<%= shotsClass %>__image" src="<%= image %>" alt="<%= shot.title %>"/>
+			<div class="<%= shotsClass %>__user-container">
+				<img class="<%= shotsClass %>__avatar noselect" src="<%= shot.user.avatar_url %>" alt="User Avatar"/>
+				<span class="<%= shotsClass %>__username text-0001"><%= shot.user.name %></span>
 			</div>
 		</div>
 

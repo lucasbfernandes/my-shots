@@ -12,6 +12,16 @@ module.exports = {
 		}]
 	},
 
+	media_preview: {
+
+		files: [{
+			expand: true,
+			cwd: '<%= defaults.src %>/media',
+			src: ['**/*.png', '**/*.svg'],
+			dest: '<%= defaults.preview %>/media'
+		}]
+	},
+
 	third_party_preview: {
 
 		files: [{

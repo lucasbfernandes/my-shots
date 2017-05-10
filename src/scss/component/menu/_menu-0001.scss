@@ -4,4 +4,14 @@
 	padding-left: 15px;
 	border-bottom: 1px solid $color-mercury;
 	background: $color-white;
+
+	&__option {
+		cursor: pointer;
+
+		&:hover { 
+			.dropdown-0001 {
+				display: block;
+			}
+		}
+	}
 }

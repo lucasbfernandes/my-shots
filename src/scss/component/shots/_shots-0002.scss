@@ -1,0 +1,71 @@
+.shots-0002 {
+	
+	margin: 0 auto;
+	font-size: 0;
+
+	&__image-container {
+		display: inline-block;
+		padding: 10px;
+		margin: 0 15px 30px 15px;
+		border-radius: 5px;
+		background-color: $color-akaroa;
+	}
+
+	&__image {
+		max-width: 400px;
+	}
+
+	&__user-container {
+		max-height: 16px;
+		margin: 10px 0 0 0;
+	}
+
+	&__avatar {
+		cursor: pointer;
+		border-radius: 50%;
+		float: left;
+		height: 16px;
+		width: 16px;
+		margin: 1px 5px 0 0;
+	}
+
+	&__username {
+		cursor: pointer;
+	}
+}
+
+@media (min-width: $media-sm) {
+
+	.shots-0002 {
+		max-width: 450px;
+	}
+}
+
+@media (min-width: $media-md) {
+
+	.shots-0002 {
+		max-width: 450px;
+	}
+}
+
+@media (min-width: $media-lg) {
+
+	.shots-0002 {
+		max-width: 900px;
+	}
+}
+
+
+@media (min-width: $media-xl) {
+
+	.shots-0002 {
+		max-width: 900px;
+	}
+}
+
+@media (min-width: $media-xxl) {
+
+	.shots-0002 {
+		max-width: 1350px;
+	}
+}

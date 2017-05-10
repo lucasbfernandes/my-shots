@@ -51,12 +51,16 @@ module.exports = function(grunt) {
 			'nunjucks_json'
 		],
 
+		build_media: [
+			'copy:media_preview'
+		],
+
 		build_third_party: [
 			'copy:third_party_preview'
 		],
 
 		build: [
-			'clean:preview', 'build_script', 'build_style', 'build_template', 'build_third_party'
+			'clean:preview', 'build_script', 'build_style', 'build_template', 'build_media', 'build_third_party'
 		],
 
 		run: [

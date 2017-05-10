@@ -1,17 +1,17 @@
 {
-  "name": "my-dribbble",
+  "name": "my-shots",
   "version": "1.0.0",
   "description": "Simple project that uses the Dribbble API to imitate some of the core functionalities of the website.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lucasbfernandes/my-dribbble.git"
+    "url": "git+https://github.com/lucasbfernandes/my-shots.git"
   },
   "author": "Lucas Borges Fernandes",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lucasbfernandes/my-dribbble/issues"
+    "url": "https://github.com/lucasbfernandes/my-shots/issues"
   },
-  "homepage": "https://github.com/lucasbfernandes/my-dribbble#readme",
+  "homepage": "https://github.com/lucasbfernandes/my-shots#readme",
   "devDependencies": {
     "bower": "1.8.0",
     "grunt": "1.0.1",
