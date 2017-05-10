@@ -13,5 +13,21 @@
 				display: block;
 			}
 		}
+
+		&[data-shots-size] {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $media-sm) {
+
+	.menu-0001 {
+		
+		&__option {
+			&[data-shots-size] {
+				display: block;
+			}
+		}
 	}
 }
