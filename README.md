@@ -69,7 +69,7 @@ This project was built in an architecture that uses:
 * [RequireJS](http://requirejs.org/)
 * [SASS](http://sass-lang.com/)
 * [Nunjucks](https://mozilla.github.io/nunjucks/)
-* [Lodash](https://lodash.com/).
+* [Lodash](https://lodash.com/)
 
 ## Future work
 
