@@ -2,8 +2,7 @@ define([
 	'jquery',
 	'component/service/shots-service',
 	'ldsh!shots',
-	'ldsh!shots-page',
-	'cookie'
+	'ldsh!shots-page'
 ], function(
 	$,
 	ShotsService,
@@ -18,13 +17,9 @@ define([
 		this.params = params || {};
 		this.searchString = '';
 		this.shots = [];
+		this.likeObject = {};
 		this.service = new ShotsService();
 	}
-
-	Shots.likeCookieSettings = {
-		path: '/',
-		domain: appSettings.domain
-	};
 
 	Shots.sizeOptions = [
 		'small',
@@ -51,9 +46,11 @@ define([
 
 		wrapShotData: function(shot) {
 			
+			var _this = this;
 			return {
 				found: !$.isEmptyObject(shot),
-				shot: shot
+				shot: shot,
+				isLiked: _this.likeObject[shot.id]
 			};
 		},
 
@@ -69,22 +66,6 @@ define([
 			);
 			return this.wrapShotData(
 				shot.length? shot[0] : {}
-			);
-		},
-
-		cookieSetup: function() {
-
-			$.cookie.raw = false;
-			$.cookie.json = true;
-		},
-
-		setLikeCookie: function(shotId) {
-
-			this.cookieSetup();
-			var likeCookie = $.cookie('likeCookie');
-
-			$.cookie(
-				'likeCookie', likeCookie, Shots.likeCookieSettings
 			);
 		},
 
@@ -113,6 +94,21 @@ define([
 			this.$holder.append(template);
 		},
 
+		updateLikeObject: function(shotId) {
+
+			if (this.likeObject[shotId] !== undefined) {
+				this.likeObject[shotId] = !this.likeObject[shotId];
+			}
+		},
+
+		initializeLikeObject: function() {
+
+			var _this = this;
+			$.each(this.shots, function(index, shot) {
+				_this.likeObject[shot.id] = false;
+			});
+		},
+
 		renderShots: function() {
 
 			var data = this.wrapShotsData(this.shots),
@@ -125,6 +121,7 @@ define([
 
 			this.shots = shots;
 			this.renderShots();
+			this.initializeLikeObject();
 		},
 
 		retrieveShots: function(params) {

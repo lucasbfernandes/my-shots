@@ -16,10 +16,21 @@ define([
 
 	ShotsPageLikeListener.prototype = {
 
+		toggleOpacity: function($element) {
+
+			if ($element.css('opacity') == '1') {
+				$element.css('opacity', '0.3');
+			}
+			else {
+				$element.css('opacity', '1');
+			}
+		},
+
 		onClick: function(event) {
 
 			event.preventDefault();
 			var $element = $(event.target);
+			this.toggleOpacity($element);
 			this.on.changed.dispatch($element.attr('data-shot-id'));
 		},
 

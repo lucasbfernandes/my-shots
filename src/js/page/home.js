@@ -51,7 +51,7 @@ define([
 
 		onShotsPageLikeChanged: function(shotId) {
 
-			console.log(shotId);
+			this.shots.updateLikeObject(shotId);
 		},
 
 		onShotsPageButtonChanged: function() {
