@@ -62,7 +62,16 @@ Run grunt:
 
 After you finish all previous steps, open your browser and type [http://localhost:9000/html/home.html](http://localhost:9000/html/home.html)! =)
 
-### Future work
+## Observations
+
+This project was built in an architecture that uses:
+
+* [RequireJS](http://requirejs.org/)
+* [SASS](http://sass-lang.com/)
+* [Nunjucks](https://mozilla.github.io/nunjucks/)
+* [Lodash](https://lodash.com/).
+
+## Future work
 
 These are the topics I wasn't able to finish in the 1 week time frame:
 
