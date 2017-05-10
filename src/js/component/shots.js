@@ -2,7 +2,8 @@ define([
 	'jquery',
 	'component/service/shots-service',
 	'ldsh!shots',
-	'ldsh!shots-page'
+	'ldsh!shots-page',
+	'cookie'
 ], function(
 	$,
 	ShotsService,
@@ -19,6 +20,11 @@ define([
 		this.shots = [];
 		this.service = new ShotsService();
 	}
+
+	Shots.likeCookieSettings = {
+		path: '/',
+		domain: appSettings.domain
+	};
 
 	Shots.sizeOptions = [
 		'small',
@@ -63,6 +69,23 @@ define([
 			);
 			return this.wrapShotData(
 				shot.length? shot[0] : {}
+			);
+		},
+
+		cookieSetup: function() {
+
+			$.cookie.raw = false;
+			$.cookie.json = true;
+		},
+
+		setLikeCookie: function(shotId) {
+
+			this.cookieSetup();
+			var likeCookie = $.cookie('likeCookie');
+
+			
+			$.cookie(
+				'likeCookie', likeCookie, Shots.likeCookieSettings
 			);
 		},
 
