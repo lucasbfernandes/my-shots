@@ -83,7 +83,6 @@ define([
 			this.cookieSetup();
 			var likeCookie = $.cookie('likeCookie');
 
-			
 			$.cookie(
 				'likeCookie', likeCookie, Shots.likeCookieSettings
 			);
