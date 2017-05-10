@@ -1,6 +1,6 @@
 # my-shots
 
-Simple 1-week Frontend project that uses the [Dribbble API](http://developer.dribbble.com/) to show and apply operations involving Shots. This project implement the following features: 
+Simple 1-week Frontend project that uses the [Dribbble API](http://developer.dribbble.com/) to show and apply operations involving Shots. This project implements the following features: 
 
 * List Shots
 * Search Shots
