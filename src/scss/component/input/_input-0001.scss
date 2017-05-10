@@ -1,0 +1,30 @@
+.input-0001 {
+	padding: 5px 5px 5px 25px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	vertical-align: middle;
+	color: $color-tundora;
+	border: none;
+	background-color: $color-white;
+	background-repeat: no-repeat;
+	background-position: 7px 50%;
+	background-image: url('../media/image/icon-search.png');
+	border-radius: 4px;
+    vertical-align: middle;
+    margin: 0;
+}
+
+@media (min-width: $media-xsm) {
+
+	.input-0001 {
+		width: 150px;
+	}
+}
+
+@media (min-width: $media-sm) {
+
+	.input-0001 {
+		width: 190px;
+	}
+}

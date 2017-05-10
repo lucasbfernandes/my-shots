@@ -32,6 +32,11 @@
 	&__username {
 		cursor: pointer;
 	}
+
+	&__no-results {
+		padding: 20px 0px 50px 0px;
+		text-align: center;
+	}
 }
 
 @media (min-width: $media-xsm) {

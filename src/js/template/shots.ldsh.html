@@ -1,21 +1,43 @@
 <% var shotsLength = shots.length; %>
 <% var shotsClass = shotsSize === 'small'? 'shots-0001' : 'shots-0002'; %>
+<% var searchEnabled = searchString !== ''? true : false; %>
+<% var shotsResults = 0; %>
+
+<% function searchMatches(shot, searchString) { %>
+
+	<% var str = searchString.toLowerCase(); %>
+	<% var shotTitle = shot.title.toLowerCase(); %>
+	<% var username = shot.user.name.toLowerCase(); %>
+
+	<% return shotTitle.indexOf(str) >= 0 || username.indexOf(str) >= 0; %>
+<% } %>
 
 <div class="<%= shotsClass %>">
 
 	<% for (var i = 0; i < shotsLength; i++) { %>
 		
-		<% var shot = shots[i]; console.log(shotsSize); %>
+		<% var shot = shots[i]; console.log(shot); %>
 		<% var image = shotsSize === 'small'? shot.images.teaser : shot.images.normal; %>
+		<% var showShot = !searchEnabled || searchMatches(shot, searchString); %>
 
-		<div class="<%= shotsClass %>__image-container">
-			<img class="<%= shotsClass %>__image" src="<%= image %>" alt="<%= shot.title %>"/>
-			<div class="<%= shotsClass %>__user-container">
-				<img class="<%= shotsClass %>__avatar noselect" src="<%= shot.user.avatar_url %>" alt="User Avatar"/>
-				<span class="<%= shotsClass %>__username text-0001"><%= shot.user.name %></span>
+		<% if (showShot) { %>
+			<div class="<%= shotsClass %>__image-container">
+				<img class="<%= shotsClass %>__image" src="<%= image %>" alt="<%= shot.title %>"/>
+				<div class="<%= shotsClass %>__user-container">
+					<img class="<%= shotsClass %>__avatar noselect" src="<%= shot.user.avatar_url %>" alt="User Avatar"/>
+					<span class="<%= shotsClass %>__username text-0001"><%= shot.user.name %></span>
+				</div>
 			</div>
-		</div>
 
+			<% shotsResults += 1 %>
+		<% } %>
+
+	<% } %>
+
+	<% if (shotsResults === 0) { %>
+		<div class="<%= shotsClass %>__no-results">
+			<span class="text-0004">No results found.</span>
+		</div>
 	<% } %>
 
 </div>

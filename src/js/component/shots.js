@@ -13,6 +13,7 @@ define([
 		this.$holder = $(holder || document.body);
 		this.shotsSize = this.sanitizeSize(shotsSize);
 		this.params = params || {};
+		this.searchString = '';
 		this.service = new ShotsService();
 	}
 
@@ -34,13 +35,22 @@ define([
 			var _this = this;
 			return {
 				shots: shots,
-				shotsSize: _this.shotsSize
+				shotsSize: _this.shotsSize,
+				searchString: _this.searchString
 			};
 		},
 
 		cleanHolder: function() {
 
 			this.$holder.empty();
+		},
+
+		searchShots: function(input) {
+
+			this.searchString = input;
+			if (this.shots) {
+				this.renderShots(this.shots);
+			}
 		},
 
 		resizeShots: function(shotsSize) {
