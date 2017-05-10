@@ -7,7 +7,8 @@ require.config({
 		'jquery'				: '../third-party/bower-component/jquery/dist/jquery',
 		'ldsh'					: '../third-party/bower-component/lodash-template-loader/loader',
 		'lodash'				: '../third-party/bower-component/lodash/lodash',
-		'signals'				: '../third-party/bower-component/js-signals/dist/signals'
+		'signals'				: '../third-party/bower-component/js-signals/dist/signals',
+		'cookie'				: '../third-party/bower-component/jquery.cookie/jquery.cookie'
 	},
 
 	waitSeconds: 60,
