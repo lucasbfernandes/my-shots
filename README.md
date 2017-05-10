@@ -25,7 +25,7 @@ I use node in this project. In order to have it, please install the latest LTS [
 ### ruby and compass
 You should also install [ruby](https://www.ruby-lang.org/pt/documentation/installation/), since we will need it for compass.
 
-In order to install compass in your machine, please type:
+In order to install [compass](http://compass-style.org/) in your machine, please type:
 
 	$ gem update --system
 	$ gem install compass
@@ -60,7 +60,7 @@ Run grunt:
 
 	$ grunt
 
-After you finish all previous steps, open your browser and type [http://localhost:9000/html/home.html](http://localhost:9000/html/home.html). You are free to use this app! =)
+After you finish all previous steps, open your browser and type [http://localhost:9000/html/home.html](http://localhost:9000/html/home.html)! =)
 
 ### Future work
 
