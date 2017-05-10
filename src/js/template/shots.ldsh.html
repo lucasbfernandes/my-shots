@@ -12,7 +12,7 @@
 	<% return shotTitle.indexOf(str) >= 0 || username.indexOf(str) >= 0; %>
 <% } %>
 
-<div class="<%= shotsClass %>">
+<div class="<%= shotsClass %>" data-shots-list>
 
 	<% for (var i = 0; i < shotsLength; i++) { %>
 		
@@ -22,7 +22,7 @@
 
 		<% if (showShot) { %>
 			<div class="<%= shotsClass %>__image-container">
-				<img class="<%= shotsClass %>__image" src="<%= image %>" alt="<%= shot.title %>"/>
+				<img class="<%= shotsClass %>__image" src="<%= image %>" alt="<%= shot.title %>" data-shot="<%= shot.id %>"/>
 				<div class="<%= shotsClass %>__user-container">
 					<img class="<%= shotsClass %>__avatar noselect" src="<%= shot.user.avatar_url %>" alt="User Avatar"/>
 					<span class="<%= shotsClass %>__username text-0001"><%= shot.user.name %></span>

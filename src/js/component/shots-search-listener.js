@@ -34,7 +34,8 @@ define([
 		bindEvents: function() {
 
 			this.$holder.find('[data-shots-search]').on(
-				'input', '[data-search-input]', $.proxy(this.onUserInput, this));
+				'input', '[data-search-input]', $.proxy(this.onUserInput, this)
+			);
 		},
 
 		init: function() {

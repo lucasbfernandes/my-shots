@@ -1,11 +1,13 @@
 define([
 	'jquery',
 	'component/service/shots-service',
-	'ldsh!shots'
+	'ldsh!shots',
+	'ldsh!shots-page'
 ], function(
 	$,
 	ShotsService,
-	ShotsRenderer
+	ShotsRenderer,
+	ShotsPageRenderer
 ) {
 
 	function Shots(holder, shotsSize, params) {
@@ -14,6 +16,7 @@ define([
 		this.shotsSize = this.sanitizeSize(shotsSize);
 		this.params = params || {};
 		this.searchString = '';
+		this.shots = [];
 		this.service = new ShotsService();
 	}
 
@@ -30,7 +33,7 @@ define([
 			return sizeExists? shotsSize : 'small';
 		},
 
-		wrapData: function(shots) {
+		wrapShotsData: function(shots) {
 
 			var _this = this;
 			return {
@@ -40,30 +43,57 @@ define([
 			};
 		},
 
+		wrapShotData: function(shot) {
+			
+			return {
+				found: !$.isEmptyObject(shot),
+				shot: shot
+			};
+		},
+
 		cleanHolder: function() {
 
 			this.$holder.empty();
 		},
 
+		getShotData: function(shotId) {
+
+			var shot = this.shots.filter(
+				function(shot) { return shot.id === shotId }
+			);
+			return this.wrapShotData(
+				shot.length? shot[0] : {}
+			);
+		},
+
+		describeShot: function(shotId) {
+
+			this.renderShotPage(shotId);
+		},
+
 		searchShots: function(input) {
 
 			this.searchString = input;
-			if (this.shots) {
-				this.renderShots(this.shots);
-			}
+			this.renderShots(this.shots);
 		},
 
 		resizeShots: function(shotsSize) {
 
 			this.shotsSize = this.sanitizeSize(shotsSize);
-			if (this.shots) {
-				this.renderShots(this.shots);
-			}
+			this.renderShots(this.shots);
+		},
+
+		renderShotPage: function(shotId) {
+
+			var data = this.getShotData(shotId),
+				template = ShotsPageRenderer(data);
+			this.cleanHolder();
+			this.$holder.append(template);
 		},
 
 		renderShots: function(shots) {
 
-			var data = this.wrapData(shots),
+			var data = this.wrapShotsData(shots),
 				template = ShotsRenderer(data);
 			this.cleanHolder();
 			this.$holder.append(template);

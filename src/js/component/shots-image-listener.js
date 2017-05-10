@@ -6,7 +6,7 @@ define([
 	Signals
 ) {
 
-	function ShotsSizeListener(holder) {
+	function ShotsImageListener(holder) {
 
 		this.$holder = $(holder || document.body);
 		this.on = {
@@ -14,19 +14,21 @@ define([
 		}
 	}
 
-	ShotsSizeListener.prototype = {
+	ShotsImageListener.prototype = {
 
 		onClick: function(event) {
 
 			var $element = $(event.target);
 			event.preventDefault();
-			this.on.changed.dispatch($element.attr('data-size'));
+			this.on.changed.dispatch($element.attr('data-shot'));
 		},
 
 		bindEvents: function() {
 
-			this.$holder.find('[data-shots-size]').on(
-				'click', '[data-size]', $.proxy(this.onClick, this)
+			this.$holder.on(
+				'click',
+				'[data-shots-list] [data-shot]',
+				$.proxy(this.onClick, this)
 			);
 		},
 
@@ -36,5 +38,5 @@ define([
 		}
 	};
 
-	return ShotsSizeListener;
+	return ShotsImageListener;
 });
