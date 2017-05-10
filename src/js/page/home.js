@@ -4,6 +4,7 @@ define([
 	'component/listener/shots-search-listener',
 	'component/listener/shots-image-listener',
 	'component/listener/shots-page-button-listener',
+	'component/listener/shots-page-like-listener',
 	'component/shots'
 ], function(
 	$,
@@ -11,6 +12,7 @@ define([
 	ShotsSearchListener,
 	ShotsImageListener,
 	ShotsPageButtonListener,
+	ShotsPageLikeListener,
 	Shots
 ) {
 
@@ -20,6 +22,7 @@ define([
 		this.shotsSearchListener = new ShotsSearchListener('#home-header');
 		this.shotsImageListener = new ShotsImageListener('#shots-container');
 		this.shotsPageButtonListener = new ShotsPageButtonListener('#shots-container');
+		this.shotsPageLikeListener = new ShotsPageLikeListener('#shots-container');
 		this.shots = new Shots('#shots-container', 'small');
 	}
 
@@ -31,6 +34,7 @@ define([
 			this.shotsSearchListener.init();
 			this.shotsImageListener.init();
 			this.shotsPageButtonListener.init();
+			this.shotsPageLikeListener.init();
 			this.shots.init();
 		},
 
@@ -43,6 +47,11 @@ define([
 
 			$('#options-menu').find('.menu-0001__dropdown').hide();
 			$('#home-header').find('.header-0001__search-input').hide();
+		},
+
+		onShotsPageLikeChanged: function(shotId) {
+
+			console.log(shotId);
 		},
 
 		onShotsPageButtonChanged: function() {
@@ -83,6 +92,10 @@ define([
 
 			this.shotsPageButtonListener.on.changed.add(
 				$.proxy(this.onShotsPageButtonChanged, this)
+			);
+
+			this.shotsPageLikeListener.on.changed.add(
+				$.proxy(this.onShotsPageLikeChanged, this)
 			);
 		},
 
