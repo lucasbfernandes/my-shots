@@ -1,0 +1,11 @@
+.button-0001 {
+	padding: 3px 10px;
+	border-radius: 0.25em;
+	background-color: $color-cornflower-blue;
+	border: 1px solid $color-dusty-gray;
+	cursor: pointer;
+
+	&:hover {
+		border: 1px solid $color-tundora;		
+	}
+}

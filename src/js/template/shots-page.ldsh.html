@@ -1,3 +1,30 @@
+<% var description = shot.description? shot.description : 'None'; %>
+
 <% if (found) { %>
-	
+	<div class="shots-page-0001">
+		<div class="shots-page-0001__container">
+			<img class="shots-page-0001__img-small" src="<%= shot.images.teaser %>" alt="<%= shot.title %>"/>
+			<img class="shots-page-0001__img-normal" src="<%= shot.images.normal %>" alt="<%= shot.title %>"/>
+			<div class="shots-page-0001__title grid-1-2">
+				<span class="text-0005"><%= shot.title %></span>
+			</div>
+			<div class="shots-page-0001__username grid-1-2">
+				<span class="text-0001">by: <%= shot.user.name %></span>
+			</div>
+			<div class="shots-page-0001__description-title grid-1-1">
+				<span class="text-0006 strong">Description:</span>
+			</div>
+			<div class="shots-page-0001__description grid-1-1">
+				<span class="text-0007"><%= description %></span>
+			</div>
+			<div class="shots-page-0001__options">
+				<div class="shots-page-0001__icon grid-1-2">
+					<img class="shots-page-0001__icon__img" src="../media/image/icon-like.png"/>
+				</div>
+				<div class="shots-page-0001__button grid-1-2">
+					<button class="button-0001 text-0008" data-shots-page-button>Go back</button>
+				</div>
+			</div>
+		</div>
+	</div>
 <% } %>

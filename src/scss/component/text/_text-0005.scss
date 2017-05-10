@@ -1,0 +1,19 @@
+.text-0005 {
+	font-weight: 500;
+	color: $color-tundora;
+	line-height: 1.4;
+}
+
+@media (min-width: $media-xsm) {
+
+	.text-0005 {
+		font-size: 13px;
+	}
+}
+
+@media (min-width: $media-sm) {
+
+	.text-0005 {
+		font-size: 22px;
+	}
+}

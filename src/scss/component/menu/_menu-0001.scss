@@ -16,19 +16,11 @@
 		}
 
 		&[data-shots-size] {
-			display: none;
+			display: block;
 		}
 	}
-}
 
-@media (min-width: $media-sm) {
+	&__dropdown {
 
-	.menu-0001 {
-		
-		&__option {
-			&[data-shots-size] {
-				display: block;
-			}
-		}
 	}
 }

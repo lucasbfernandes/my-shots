@@ -25,5 +25,21 @@
 			background-color: $color-gallery;
 			opacity: 1;
 		}
+
+		&[data-size="normal"] {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $media-sm) {
+
+	.dropdown-0001 {
+		
+		&__option {
+			&[data-size="normal"] {
+				display: block;
+			}
+		}
 	}
 }

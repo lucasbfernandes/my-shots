@@ -91,9 +91,9 @@ define([
 			this.$holder.append(template);
 		},
 
-		renderShots: function(shots) {
+		renderShots: function() {
 
-			var data = this.wrapShotsData(shots),
+			var data = this.wrapShotsData(this.shots),
 				template = ShotsRenderer(data);
 			this.cleanHolder();
 			this.$holder.append(template);
@@ -102,7 +102,7 @@ define([
 		onRetrieveShots: function(shots) {
 
 			this.shots = shots;
-			this.renderShots(shots);
+			this.renderShots();
 		},
 
 		retrieveShots: function(params) {

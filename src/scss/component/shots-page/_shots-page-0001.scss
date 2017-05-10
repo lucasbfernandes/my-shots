@@ -1,0 +1,123 @@
+.shots-page-0001 {
+	margin: 0 auto;
+	font-size: 0;
+
+	&__container {
+		display: inline-block;
+		padding: 10px;
+		margin: 0 15px 30px 15px;
+		border-radius: 5px;
+		background-color: $color-akaroa;
+	}
+
+	&__title {
+		margin: 10px 0 0 0;
+		text-align: center;	
+	}
+
+	&__username {
+		margin: 10px 0 0 0;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	&__description-title {
+		margin: 10px 0 0 0;
+		border-top: 1px solid $color-tundora;
+	}
+
+	&__description {
+		margin: 10px 0 0 0;	
+	}
+
+	&__options {
+		margin: 10px 0 0 0;
+		border-top: 1px solid $color-tundora;
+	}
+
+	&__icon {
+		text-align: center;
+		margin-top: 15px;
+
+		&__img {
+			width: 20px;
+			opacity: 0.3;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__button {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	&__img-small {
+
+	}
+
+	&__img-normal {
+
+	}
+}
+
+@media (min-width: $media-xsm) {
+
+	.shots-page-0001 {
+		max-width: 250px;
+
+		&__img-small {
+			display: inline-block;
+		}
+
+		&__img-normal {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $media-sm) {
+
+	.shots-page-0001 {
+		max-width: 450px;
+
+		&__img-small {
+			display: none;
+		}
+
+		&__img-normal {
+			display: inline-block;
+		}
+	}
+}
+
+@media (min-width: $media-md) {
+
+	.shots-page-0001 {
+		max-width: 450px;
+	}
+}
+
+@media (min-width: $media-lg) {
+
+	.shots-page-0001 {
+		max-width: 450px;
+	}
+}
+
+@media (min-width: $media-xl) {
+
+	.shots-page-0001 {
+		max-width: 450px;
+	}
+}
+
+@media (min-width: $media-xxl) {
+
+	.shots-page-0001 {
+		max-width: 450px;
+	}
+}
